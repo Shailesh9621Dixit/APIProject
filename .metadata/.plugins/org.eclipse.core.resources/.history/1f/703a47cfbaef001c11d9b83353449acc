@@ -1,0 +1,52 @@
+package API.APIProject;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBodyData;
+import io.restassured.response.ValidatableResponse;
+import net.minidev.json.JSONObject;
+
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+public class post_tc_02 {
+
+	
+
+	@Test(priority = 1)
+	public static void getpatDemo() {
+		baseURI = "http://localhost:3000";
+		basePath = "/patDemo";
+		given().body("").when().get().then().statusCode(200).body("patDetails[1].firstName",equalTo("Shyam"))
+		            .body("patDetails.patID",hasItems(129654)).log().all();
+	
+	}
+
+@Test(priority =2)
+public static void createPost() {
+	
+	
+	baseURI = "http://localhost:3000";
+	basePath = "/patDemo";
+	JSONObject reqBody = new JSONObject();
+	reqBody.put("firstName", "Seeta");
+	reqBody.put("lastName","Narayan");
+	reqBody.put("age", 27);
+	reqBody.put("patID",150979);
+	
+	given().body(reqBody.toJSONString()).when().post().then().log().all().
+	
+}
+}
+
+
+
+
+
+
+
+
+
+

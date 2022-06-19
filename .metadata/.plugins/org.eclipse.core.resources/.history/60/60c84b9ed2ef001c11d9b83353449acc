@@ -1,0 +1,16 @@
+package API.APIProject;
+
+import org.testng.annotations.Test;
+
+public class jsonSchema {
+
+	@Test
+	public void schemaTest() {
+		
+		
+		
+		
+	}
+	
+	
+}

@@ -1,0 +1,41 @@
+package API.APIProject;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBodyData;
+import io.restassured.response.ValidatableResponse;
+import net.minidev.json.JSONObject;
+
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+public class post_tc_02 {
+
+	
+//	@Test
+//	
+//	public static void createPost() {
+//		baseURI = "http://localhost:3000";
+//		JSONObject request = new JSONObject();
+//		request.put("surgeon", "Dr.Dixit");
+//		request.put("sgnGUID", "yt76567eredfdxvx90lk12nb54");
+//		request.put("planStatus", "Scheduled");
+//		request.put("scheduledDate", "6/19/2022, 1:57:10 PM");
+//		request.put("sureryCenter","ORACenter");
+//		
+//		given().headers("contentType","application/json","api-version",1).body(request.toJSONString()).
+//		        
+//		 when().post("/patDemo").then().assertThat().statusCode(201).log().all();
+//		
+	//}
+	@Test
+	public static void getpatDemo() {
+		baseURI = "http://localhost:3000";
+		basePath = "/patDemo";
+		given().get().then().statusCode(200).body("patDetails.patID".hasItems(129654)).log().all();
+		
+		
+	}
+}

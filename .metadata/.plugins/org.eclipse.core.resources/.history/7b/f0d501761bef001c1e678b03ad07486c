@@ -1,0 +1,15 @@
+package API.APIProject;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+
+public class tc_01 {
+
+	
+	
+	@Test
+	public void setup() {
+		RestAssured.baseURI = "https://reqres.in/";
+	}
+}

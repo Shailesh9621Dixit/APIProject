@@ -1,0 +1,19 @@
+package API.APIProject;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+
+public class tc_01 {
+
+	
+	
+	@Test
+	public void setup() {	 	 	
+		Response response = RestAssured.baseURI = "https://reqres.in/api/users?page=2";
+	
+		
+		
+	}
+}
